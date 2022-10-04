@@ -1,0 +1,42 @@
+.artists-wrapper{
+
+  
+    width: 30%;
+    height: min(50rem, 70vh);
+    border: 3px solid black;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 18px;
+    box-shadow: 0 0  20px -1px black;
+
+
+}
+
+.artists-section{
+  width: 90%;
+  height: 90%;
+  overflow: auto;
+  display: grid;
+  gap: 2rem;
+ 
+}
+
+
+.pagewrapper{
+    width: 100wr;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+background-image: linear-gradient(62deg, #8EC5FC 0%, #E0C3FC 100%);
+
+}
+
+@media screen and (max-width: 1200px) {
+
+    .artist-wrapper{
+        width: 70vw;
+    }
+    
+}
