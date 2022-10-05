@@ -1,11 +1,11 @@
-import "./artist.scss"
+import "./maincard.scss"
 
 
 const MainCard = (props) => {
 
     return(
         
-        <div className='artist'>
+        <div data-testid='card' className='artist'>
             <div className="rgb">
 
             
@@ -28,7 +28,7 @@ const MainCard = (props) => {
             <div className="artist__stats">
 
                {props.listeners&&<p>{props.listeners} listeners</p>}
-               <p>{props.playcount} playcount</p>
+               <p title="par">{props.playcount} playcount</p>
 
             </div>
 

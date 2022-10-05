@@ -1,12 +1,13 @@
 import { useContext, useEffect } from "react";
 import { useLocation } from "react-router-dom";
+import ArtistCard from "../../components/ArtistCard/ArtistCard";
 import Loading from "../../components/Loading/Loading";
 import MainCard from "../../components/MainCard/MainCard";
 import useHttp from "../../hooks/useHttp";
 import { ThemeContext } from "../../store/context";
 import "./artistpage.scss"
 
-/* CSS VARIABLELARI GLOBAL HER SAYFADA TANIMLAMANA GEREK YOK SİL ONLARI KNK ;) */
+
 const ArtistPage = (props) => {
 
 const location = useLocation().pathname.slice(1)
@@ -19,23 +20,12 @@ fetchArtist(location)
 
     return(
         <>
-        {loading ? <Loading/>:<div className="artistpage-wrapper">
+        {loading ? <Loading/>:<div data-testid='border' className="artistpage-wrapper">
 
             <div className="artistpage-wrapper__inner">
 
-                <div className="artistpage-wrapper__inner__artistcard">
-
-                    <div className="artistpage-wrapper__inner__artistcard__img">
-
-                            <img src={artist.image ? artist.image[2]['#text']?artist.image[2]['#text']:"https://lastfm.freetls.fastly.net/i/u/174s/2a96cbd8b46e442fc41c2b86b821562f.png":""}></img>
-
-                    </div>
-
-                    <div className="artistpage-wrapper__inner__artistcard__title">
-                            <h1>{ctx.currentArtist ? ctx.currentArtist:artist.name}</h1>
-                    </div>
-
-                </div>
+                <ArtistCard image={artist.image} currentArtist={ctx.currentArtist} name={artist.name} />
+                
 
                 <div className="artistpage-wrapper__inner__artistassets">
 

@@ -19,26 +19,26 @@ const ctx = useContext(ThemeContext)
 useEffect(()=> {
     fetchData(page)
 },[page])
-const fetchMore =() =>{
-    setPage(page + 1)
-}
-       const scroll = (e) => {
-        let element = e.target;
-        var a = element.scrollTop;
-        var b = element.scrollHeight - element.clientHeight;
-        var c = a / b;
-        console.log(c)
-        if(c == 1){
-            e.preventDefault()
-            fetchMore()
-        }
-       }
+// const fetchMore =() =>{
+//     setPage(page + 1)
+// }
+//        const scroll = (e) => {
+//         let element = e.target;
+//         var a = element.scrollTop;
+//         var b = element.scrollHeight - element.clientHeight;
+//         var c = a / b;
+//         console.log(c)
+//         if(c >= 0.90){
+//             e.preventDefault()
+//             fetchMore()
+//         }
+//        }
     return(
 <>
             {loading? <Loading></Loading>:
-            <div className="artists-wrapper">
+            <div data-testid='border' className="artists-wrapper">
 
-                <div className="artists-section" onScroll={scroll}>
+                <div className="artists-section" >
                    
 
                     {data.artist?.map(artist =><NavLink onClick={ () =>  ctx.onCurrentArtist(artist.name)} className={'artist-card'} to={artist.name.toLowerCase().replaceAll(" ", "").replaceAll(",","")}> <Artist title='Artist' img={artist.image[1]['#text']} artist={artist.name} playcount={artist.playcount} listeners={artist.listeners}/></NavLink>)}

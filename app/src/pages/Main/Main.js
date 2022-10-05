@@ -16,7 +16,7 @@ const Main = (props) => {
    
 
     return(
-        <div className={"pagewrapper"}>
+        <div data-testid='background' className={"pagewrapper"}>
             <div className="themechange">
                 <div className="themechange__btnwrapper">
                     <DarkMode></DarkMode>
