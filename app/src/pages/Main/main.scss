@@ -3,13 +3,16 @@
   --darkbg:#1B2430;
   --lightbg:#defabb;
 }
-// #0d7855
+
 body.light{
 
     --background-color: var(--lightbg);
     --text-color:black;
     --border:#a7e25f;
     --card:#a7e25f;
+    --bgimg:url("../../assets/moon-svgrepo-com.svg");
+    --loadingShadow: #a83cfa;
+
 
 }
 
@@ -19,6 +22,8 @@ body.dark{
     --text-color:white;
     --border:#502f69;
     --card:#382447;
+    --bgimg:url("../../assets/sun-svgrepo-com.svg");
+    --loadingShadow:#11f86e;
 
 
 
@@ -35,7 +40,6 @@ body.dark{
     &__btnwrapper{
         width: 80%;
         height: 100%;
-        background-color: var(--border);
         position: relative;
         
         

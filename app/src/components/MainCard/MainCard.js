@@ -5,7 +5,7 @@ const MainCard = (props) => {
 
     return(
         
-        <div data-testid='card' className='artist'>
+        <div data-testid='card' style={{background:props.backgroundColor, color:props.color}} className='artist'>
             <div className="rgb">
 
             

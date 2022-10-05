@@ -13,10 +13,10 @@
 
 @keyframes glow {
     from {
-        filter:drop-shadow(0 0 -10px #417255);
+        filter:drop-shadow(0 0 -10px var(--loadingShadow));
     }
     to {
-        filter:drop-shadow(0 0 10px #417255);
+        filter:drop-shadow(0 0 10px var(--loadingShadow));
 
     }
   }
