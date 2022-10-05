@@ -1,6 +1,29 @@
+@import url('https://fonts.googleapis.com/css2?family=Nunito:wght@300;400&display=swap');
 *{
+  font-family: 'Nunito';
   margin: 0;
   box-sizing: border-box;
-  
 }
 
+/* ===== Scrollbar CSS ===== */
+  /* Firefox */
+  * {
+    scrollbar-width: thin;
+    scrollbar-color: #92e8d9 #ffffff;
+    text-decoration: none;
+  }
+
+  /* Chrome, Edge, and Safari */
+  *::-webkit-scrollbar {
+    width: 20px;
+  }
+
+  *::-webkit-scrollbar-track {
+    background: #ffffff00;
+  }
+
+  *::-webkit-scrollbar-thumb {
+    background-color: #92e8d9;
+    border-radius: 10px;
+    border: 3px none #ffffff;
+  }

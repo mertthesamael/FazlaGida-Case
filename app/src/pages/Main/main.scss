@@ -1,0 +1,69 @@
+
+:root{
+  --darkbg:#1B2430;
+  --lightbg:#defabb;
+}
+// #0d7855
+body.light{
+
+    --background-color: var(--lightbg);
+    --text-color:black;
+    --border:#a7e25f;
+    --card:#a7e25f;
+
+}
+
+body.dark{
+
+    --background-color: var(--darkbg);
+    --text-color:white;
+    --border:#502f69;
+    --card:#382447;
+
+
+
+}
+
+
+.themechange{
+    width: 2rem;
+    height: 3rem;
+    position: absolute;
+    top: 3%;
+    right: 3%;
+
+    &__btnwrapper{
+        width: 80%;
+        height: 100%;
+        background-color: var(--border);
+        position: relative;
+        
+        
+
+        & button{
+            left: -1.2rem;
+            position: absolute;
+        }
+    }
+}
+.pagewrapper{
+    width: 100wr;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: var(--background-color);
+    transition: all 1s ease-in;
+    position: relative;
+    z-index: 1;
+
+}
+.pagewrapper-dark{
+    width: 100wr;
+    height: 100vh;
+    transition: all 1s ease-in-out;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
