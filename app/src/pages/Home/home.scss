@@ -16,11 +16,11 @@
 
 .artists-section{
   width: 90%;
-  height: 90%;
+
+  max-height: 90%;
   display: grid;
-  gap: 2rem;
   padding: 1rem;
- overflow: auto;
+  overflow: auto;
 }
 
 

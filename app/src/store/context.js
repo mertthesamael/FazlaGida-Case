@@ -1,14 +1,17 @@
 import React, { useState } from "react";
 
 
-const ThemeContext = React.createContext({
+const ArtistContext = React.createContext({
     dark:false
 })
 
-export const ThemeContextWrapper = (props) => {
+export const ArtistContextWrapper = (props) => {
+    const [offset, setOffset] = useState(0)
 
     const [currentArtist, setCurrentArtist] = useState("")
-  
+    const offsetHandler = (value) => {
+        setOffset(offset+value)
+    }
   
     const currentArtistHandler = (name) => {
         return setCurrentArtist(name)
@@ -16,15 +19,17 @@ export const ThemeContextWrapper = (props) => {
     }
   
     return(
-        <ThemeContext.Provider value={{
+        <ArtistContext.Provider value={{
             onCurrentArtist: currentArtistHandler,
             currentArtist:currentArtist,
+            offset:offset,
+            onSetOffset:offsetHandler
         }}>
 
             {props.children}
-        </ThemeContext.Provider>
+        </ArtistContext.Provider>
     )
 
 }
 
-export {ThemeContext}
+export {ArtistContext}

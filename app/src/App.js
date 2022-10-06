@@ -1,6 +1,6 @@
 import './App.css';
 import Main from './pages/Main/Main';
-import { ThemeContextWrapper } from './store/context';
+import { ArtistContextWrapper } from './store/context';
 import { QueryClientProvider, QueryClient } from "react-query"
 import {ReactQueryDevtools} from "react-query/devtools"
 function App() {
@@ -8,11 +8,11 @@ function App() {
   return (
     <QueryClientProvider client={queryClient}>
 
-      <ThemeContextWrapper>
+      <ArtistContextWrapper>
 
           <Main/>
       
-      </ThemeContextWrapper>
+      </ArtistContextWrapper>
 
     <ReactQueryDevtools initialIsOpen={false} />
     </QueryClientProvider>
