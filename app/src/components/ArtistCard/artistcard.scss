@@ -1,7 +1,7 @@
 .artistpage-wrapper__inner{
 
     &__artistcard{
-        width: 100%;
+            max-width: 100%;
             height: 30%;
             display: flex;
             border-radius: 14px;

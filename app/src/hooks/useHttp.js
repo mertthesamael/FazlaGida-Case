@@ -1,5 +1,7 @@
 import axios from "axios"
 import { useState } from "react"
+import { useQuery } from "react-query"
+
 
 const useHttp = (url) => {
 const [data, setData] = useState([])
@@ -8,7 +10,10 @@ const [topAlbums, setTopAlbums] = useState([])
 const [topTracks, setTopTracks] = useState([])
 const [artist, setArtist] = useState([])
 const [loading, setLoading] = useState(true)
+
 const fetchData = async (page) => {
+
+
     setLoading(true)
     const data = await axios(`https://ws.audioscrobbler.com/2.0/?method=chart.gettopartists&page=${page}&limit=10&api_key=09552f93366111d15ebd8bef72e1330b&format=json`)
     setData(data.data.artists)

@@ -4,7 +4,7 @@ import "./artistcard.scss"
 const ArtistCard = (props) => {
 
     return(
-        <div className="artistpage-wrapper__inner__artistcard">
+        <div style={{border:props.border, boxShadow:props.shadow, color:props.color}} className="artistpage-wrapper__inner__artistcard">
 
                     <div className="artistpage-wrapper__inner__artistcard__img">
 

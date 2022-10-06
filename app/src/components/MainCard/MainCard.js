@@ -1,11 +1,10 @@
 import "./maincard.scss"
 
 
-const MainCard = (props) => {
-
+const MainCard = ({backgroundColor, color, img, title, artist, playcount, listeners }) => {
     return(
         
-        <div data-testid='card' style={{background:props.backgroundColor, color:props.color}} className='artist'>
+        <div data-testid='card' style={{background:backgroundColor, color:color}} className='artist'>
             <div className="rgb">
 
             
@@ -14,12 +13,12 @@ const MainCard = (props) => {
             <div className="artist__info">
 
                 <div className="artist__info__img">
-                        <img src={props.img? props.img : 'https://lastfm.freetls.fastly.net/i/u/64s/2a96cbd8b46e442fc41c2b86b821562f.png'}></img>
+                        <img src={img? img : 'https://lastfm.freetls.fastly.net/i/u/64s/2a96cbd8b46e442fc41c2b86b821562f.png'}></img>
                 </div>
 
                 <div className="artist__info__title">
-                    <p><b>{props.title}</b></p>
-                    <p>{props.artist}</p>
+                    <p><b>{title}</b></p>
+                    <p>{artist}</p>
 
                 </div>
 
@@ -27,8 +26,8 @@ const MainCard = (props) => {
 
             <div className="artist__stats">
 
-               {props.listeners&&<p>{props.listeners} listeners</p>}
-               <p title="par">{props.playcount} playcount</p>
+               {listeners&&<p>{listeners} listeners</p>}
+               <p title="par">{playcount} playcount</p>
 
             </div>
 

@@ -1,14 +1,19 @@
 import './App.css';
 import Main from './pages/Main/Main';
 import { ThemeContext, ThemeContextWrapper } from './store/context';
-
+import { QueryClientProvider, QueryClient } from "react-query"
 function App() {
+  const queryClient = new QueryClient()
   return (
-    <ThemeContextWrapper>
+    <QueryClientProvider client={queryClient}>
 
-    <Main/>
-    
-    </ThemeContextWrapper>
+      <ThemeContextWrapper>
+
+          <Main/>
+      
+      </ThemeContextWrapper>
+
+    </QueryClientProvider>
   );
 }
 

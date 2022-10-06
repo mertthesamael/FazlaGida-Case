@@ -1,6 +1,7 @@
+import { useState } from "react";
 import "./DarkMode.scss"
 
-const DarkMode = () => {
+const DarkMode = (props) => {
 
 /*DARK MODE SETTINGS */
 
@@ -40,7 +41,7 @@ const DarkMode = () => {
 
 
     return(
-        <button className={theme === "dark"? clickedClass : ""} id='darkMode' onClick={e => switchTheme(e)}>
+        <button style={{border:props.border,boxShadow:props.shadow,backgroundImage:props.img}} className={theme === "dark"? clickedClass : ""} id='darkMode' onClick={e => switchTheme(e)}>
         </button>
     )
 

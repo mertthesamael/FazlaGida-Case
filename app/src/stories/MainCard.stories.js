@@ -1,5 +1,5 @@
 import MainCard from "../components/MainCard/MainCard"
-
+import "../components/MainCard/maincard.scss"
 export default {
     title:'Main Card',
     component: MainCard
@@ -20,5 +20,7 @@ Light.args = {
     backgroundColor:'#a7e25f',
     artist:'Daft Punk',
     title: 'Artist',
-    color: 'white'
+    color: 'white',
+    playcount:99999999,
+
 }

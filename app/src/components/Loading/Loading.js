@@ -1,10 +1,10 @@
 import "./loading.scss"
 
-const Loading = () => {
+const Loading = (props) => {
 
     return(
         <div data-testid='loading' className="loading-wrapper__logo">
-            <img className="loadin-wrapper__logo" src={require("../../assets/logo.png")}></img>
+            <img style={{filter: props.dropShadow}} className="loadin-wrapper__logo" src={require("../../assets/logo.png")}></img>
         </div>
     )
 
