@@ -1,24 +1,26 @@
-import { useContext, useEffect, useState } from "react";
+import { useContext } from "react";
 import Artist from "../../components/MainCard/MainCard";
-import useHttp from "../../hooks/useHttp";
 import "./home.scss"
 import InfiniteScrolll from "react-infinite-scroll-component"
 import { NavLink } from "react-router-dom";
 import { ThemeContext } from "../../store/context";
 import Loading from "../../components/Loading/Loading";
+import { useTopArtists } from "../../hooks/useTopArtists";
 
 
 
 const Home = (props) => {
-const {data, loading, fetchData, artists} = useHttp()
-const [page, setPage] = useState(1)
-const [offset, setOffset] = useState(550)
+
 const ctx = useContext(ThemeContext)
 
+const {data:queryData, isLoading, isError, error, hasNextPage, fetchNextPage, isFetching } = useTopArtists()
 
-useEffect(()=> {
-    fetchData(page)
-},[page])
+
+   
+
+console.log(queryData)
+
+
 // const fetchMore =() =>{
 //     setPage(page + 1)
 // }
@@ -33,21 +35,28 @@ useEffect(()=> {
 //             fetchMore()
 //         }
 //        }
+
+if(isLoading){
+    return <Loading></Loading>
+}
+if(isError){
+    return <h2>{error.message}</h2>
+}
     return(
-<>
-            {loading? <Loading></Loading>:
+
+           
             <div data-testid='border' className="artists-wrapper">
 
                 <div className="artists-section" >
                    
 
-                    {data.artist?.map(artist =><NavLink onClick={ () =>  ctx.onCurrentArtist(artist.name)} className={'artist-card'} to={artist.name.toLowerCase().replaceAll(" ", "").replaceAll(",","")}> <Artist title='Artist' img={artist.image[1]['#text']} artist={artist.name} playcount={artist.playcount} listeners={artist.listeners}/></NavLink>)}
+                    {queryData.map(artist =><NavLink key={artist.name} onClick={() => ctx.onCurrentArtist(artist)} className={'artist-card'} to={artist.mbid}> <Artist title='Artist' img={artist.image[1]['#text']} artist={artist.name} playcount={artist.playcount} listeners={artist.listeners}/></NavLink>)}
 
                 </div>
             
-            </div>}
+            </div>
 
-</>
+
     )
 
 }

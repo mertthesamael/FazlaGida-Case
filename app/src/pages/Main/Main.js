@@ -27,7 +27,7 @@ const Main = (props) => {
 
             <Switch>
 
-                <Route path={'/:artist'}>
+                <Route path={'/:mbId'}>
                     <ArtistPage />
                 </Route>
 

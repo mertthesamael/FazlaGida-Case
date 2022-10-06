@@ -1,30 +1,34 @@
-import { useContext, useEffect } from "react";
-import { useLocation } from "react-router-dom";
+import { useParams } from "react-router-dom";
 import ArtistCard from "../../components/ArtistCard/ArtistCard";
 import Loading from "../../components/Loading/Loading";
 import MainCard from "../../components/MainCard/MainCard";
-import useHttp from "../../hooks/useHttp";
-import { ThemeContext } from "../../store/context";
+import { useArtistAlbums } from "../../hooks/useArtistAlbums";
+import { useArtistTracks } from "../../hooks/useArtistTracks";
 import "./artistpage.scss"
 
 
 const ArtistPage = (props) => {
 
-const location = useLocation().pathname.slice(1)
-const ctx = useContext(ThemeContext)
-const { fetchArtist, loading, artist, topAlbums, topTracks } = useHttp()
-console.log(ctx.currentArtist)
-useEffect(()=> {
-fetchArtist(location)
-},[])
+
+const { mbId } = useParams()
+const {isLoading:albumLoading, data:topAlbums, isError, error} = useArtistAlbums(mbId)
+
+const {isLoading:trackLoading ,data:topTracks } = useArtistTracks(mbId)
+
+
+if(albumLoading || trackLoading){
+
+    return <Loading></Loading>
+    
+}
 
     return(
-        <>
-        {loading ? <Loading/>:<div data-testid='border' className="artistpage-wrapper">
+        
+       <div data-testid='border' className="artistpage-wrapper">
 
             <div className="artistpage-wrapper__inner">
 
-                <ArtistCard image={artist.image} currentArtist={ctx.currentArtist} name={artist.name} />
+                <ArtistCard  name={topAlbums[0].artist.name} />
                 
 
                 <div className="artistpage-wrapper__inner__artistassets">
@@ -33,7 +37,7 @@ fetchArtist(location)
 
                         <h1 style={{borderBottom: '4px solid black', width:'95%'}}>Top Albums</h1>
 
-                        {topAlbums.map(album => <MainCard title={artist.name} playcount={album.playcount} artist={album.name} img={album.image[1]['#text']}></MainCard>)}
+                        {topAlbums.map(album => <MainCard title={topAlbums[0].artist.name} playcount={album.playcount} artist={album.name} img={album.image[1]['#text']}></MainCard>)}
 
                     </div>
 
@@ -41,7 +45,7 @@ fetchArtist(location)
 
                         <h1 style={{borderBottom: '4px solid black',width:'95%'}}>Top Tracks</h1>
 
-                        {topTracks.map(album => <MainCard title={album.name} listeners={album.listeners} playcount={album.playcount} artist={artist.name}img={album.image[1]['#text']}></MainCard>)}
+                        {topTracks.track.map(album => <MainCard title={album.name} listeners={album.listeners} playcount={album.playcount} artist={topAlbums[0].artist.name} img={album.image[1]['#text']}></MainCard>)}
 
 
                     </div>
@@ -50,8 +54,8 @@ fetchArtist(location)
 
             </div>
 
-        </div>}
-        </>
+        </div>
+    
     )
 
 }
