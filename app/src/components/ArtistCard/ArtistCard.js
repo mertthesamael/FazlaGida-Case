@@ -8,7 +8,7 @@ const ArtistCard = (props) => {
 
                     <div className="artistpage-wrapper__inner__artistcard__img">
 
-                            <img src={props.image ? props.image[2]['#text']?props.image[2]['#text']:"https://lastfm.freetls.fastly.net/i/u/174s/2a96cbd8b46e442fc41c2b86b821562f.png":""}></img>
+                            <img src={props.image}></img>
 
                     </div>
 

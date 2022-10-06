@@ -11,16 +11,16 @@
     box-shadow: 0 0  10px 3px var(--border);
 
 
+
 }
 
 .artists-section{
   width: 90%;
   height: 90%;
-  overflow: auto;
   display: grid;
   gap: 2rem;
   padding: 1rem;
- 
+ overflow: auto;
 }
 
 

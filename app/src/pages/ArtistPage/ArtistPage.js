@@ -1,9 +1,11 @@
+import { useContext } from "react";
 import { useParams } from "react-router-dom";
 import ArtistCard from "../../components/ArtistCard/ArtistCard";
 import Loading from "../../components/Loading/Loading";
 import MainCard from "../../components/MainCard/MainCard";
 import { useArtistAlbums } from "../../hooks/useArtistAlbums";
 import { useArtistTracks } from "../../hooks/useArtistTracks";
+import { ThemeContext } from "../../store/context";
 import "./artistpage.scss"
 
 
@@ -11,15 +13,17 @@ const ArtistPage = (props) => {
 
 
 const { mbId } = useParams()
-const {isLoading:albumLoading, data:topAlbums, isError, error} = useArtistAlbums(mbId)
 
+//Fetching Track and Album data
+const {isLoading:albumLoading, data:topAlbums, isError, error} = useArtistAlbums(mbId)
 const {isLoading:trackLoading ,data:topTracks } = useArtistTracks(mbId)
+const { currentArtist } = useContext(ThemeContext)
 
 
 if(albumLoading || trackLoading){
 
     return <Loading></Loading>
-    
+
 }
 
     return(
@@ -28,7 +32,8 @@ if(albumLoading || trackLoading){
 
             <div className="artistpage-wrapper__inner">
 
-                <ArtistCard  name={topAlbums[0].artist.name} />
+                <ArtistCard 
+                image={currentArtist.image ? currentArtist.image[1]['#text']:"https://lastfm.freetls.fastly.net/i/u/174s/2a96cbd8b46e442fc41c2b86b821562f.png"} name={topAlbums[0].artist.name} />
                 
 
                 <div className="artistpage-wrapper__inner__artistassets">
@@ -37,7 +42,12 @@ if(albumLoading || trackLoading){
 
                         <h1 style={{borderBottom: '4px solid black', width:'95%'}}>Top Albums</h1>
 
-                        {topAlbums.map(album => <MainCard title={topAlbums[0].artist.name} playcount={album.playcount} artist={album.name} img={album.image[1]['#text']}></MainCard>)}
+                        {topAlbums.map(album => 
+                        <MainCard
+                        title={topAlbums[0].artist.name}
+                        playcount={album.playcount}
+                        artist={album.name} 
+                        img={album.image[1]['#text']} />)}
 
                     </div>
 
@@ -45,7 +55,13 @@ if(albumLoading || trackLoading){
 
                         <h1 style={{borderBottom: '4px solid black',width:'95%'}}>Top Tracks</h1>
 
-                        {topTracks.track.map(album => <MainCard title={album.name} listeners={album.listeners} playcount={album.playcount} artist={topAlbums[0].artist.name} img={album.image[1]['#text']}></MainCard>)}
+                        {topTracks.track.map(album => 
+                        <MainCard 
+                        title={album.name} 
+                        listeners={album.listeners} 
+                        playcount={album.playcount} 
+                        artist={topAlbums[0].artist.name} 
+                        img={album.image[1]['#text']} />)}
 
 
                     </div>
