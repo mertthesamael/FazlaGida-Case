@@ -6,6 +6,7 @@ import MainCard from '../components/MainCard/MainCard';
 import Main from '../pages/Main/Main';
 
 it("should change colors on click", () => {
+
     const Mock = () => {
         const queryClient = new QueryClient()
 
@@ -25,9 +26,12 @@ it("should change colors on click", () => {
 
 })
 
+
 it("should change colors on click", () => {
     const Mock = () => {
+
         const queryClient = new QueryClient()
+
         return(
             <BrowserRouter>
             

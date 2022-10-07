@@ -1,8 +1,6 @@
-
-
 .artists-wrapper{
-    width: 30%;
-    height: min(50rem, 70vh);
+    width: 35%;
+    height: min(70vh);
     border: 3px solid var(--border);
     display: flex;
     justify-content: center;
@@ -10,17 +8,15 @@
     border-radius: 18px;
     box-shadow: 0 0  10px 3px var(--border);
 
-
-
 }
 
 .artists-section{
   width: 90%;
-
   max-height: 90%;
   display: grid;
   padding: 1rem;
   overflow: auto;
+  
 }
 
 
@@ -29,6 +25,8 @@
 @media screen and (max-width: 1200px) {
 
     .artists-wrapper{
+    height: min(70vh, 50rem);
+
         width: 80%!important;
         height: 75%;
         zoom: 0.5;

@@ -6,14 +6,12 @@ const ArtistContext = React.createContext({
 })
 
 export const ArtistContextWrapper = (props) => {
-    const [offset, setOffset] = useState(0)
+
 
     const [currentArtist, setCurrentArtist] = useState("")
-    const offsetHandler = (value) => {
-        setOffset(offset+value)
-    }
   
     const currentArtistHandler = (name) => {
+
         return setCurrentArtist(name)
      
     }
@@ -22,11 +20,10 @@ export const ArtistContextWrapper = (props) => {
         <ArtistContext.Provider value={{
             onCurrentArtist: currentArtistHandler,
             currentArtist:currentArtist,
-            offset:offset,
-            onSetOffset:offsetHandler
-        }}>
+            }}>
 
             {props.children}
+
         </ArtistContext.Provider>
     )
 

@@ -13,7 +13,7 @@ Dark.args = {
     shadow:'0 0  10px 1px #502f69',
     image:"https://lastfm.freetls.fastly.net/i/u/174s/2a96cbd8b46e442fc41c2b86b821562f.png",
     name:'Daft Punk',
-    color:'white'
+   
 }
 export const Light = Template.bind({})
 Light.args = {
@@ -21,5 +21,5 @@ Light.args = {
     shadow:'0 0  10px 1px #a7e25f',
     image:"https://lastfm.freetls.fastly.net/i/u/174s/2a96cbd8b46e442fc41c2b86b821562f.png",
     name:'Daft Punk',
-    color:'white'
+
 }

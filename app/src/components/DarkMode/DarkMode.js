@@ -1,4 +1,3 @@
-import { useState } from "react";
 import "./DarkMode.scss"
 
 const DarkMode = (props) => {
@@ -10,9 +9,11 @@ const DarkMode = (props) => {
     const lightTheme = "light";
     const darkTheme = "dark";
     let theme;
+
     if (localStorage){
         theme = localStorage.getItem("theme");
     }
+
     if (theme === lightTheme || theme === darkTheme){
         body.classList.add(theme);
     }else{
@@ -24,11 +25,13 @@ const DarkMode = (props) => {
 /*THEME SWITCH FUNCTION */
 
     const switchTheme = (e) => {
+
         if (theme === darkTheme){
             body.classList.replace(darkTheme, lightTheme);
             e.target.classList.remove(clickedClass);
             localStorage.setItem("theme", "light");
             theme = lightTheme;
+
         }else {
             body.classList.replace(lightTheme, darkTheme);
             e.target.classList.remove(clickedClass);

@@ -12,7 +12,7 @@
             align-items: center;
             padding: 2rem 2rem;
             box-shadow: 0 0  10px 1px var(--border);
-            
+            cursor: default;
             
             &__img{
 
@@ -25,6 +25,7 @@
                 
                 & img{
                     height: 100%;
+
                 }
                 
             }

@@ -13,15 +13,15 @@
     color: var(--text-color);
     margin-bottom: 1rem;
     box-shadow: 5px 5px 10px -5px rgba(0, 0, 0, 0.9);
-
+    cursor: pointer!important;
    &:hover{
+
     .rgb::after{
         display: block;
     }
+    
    }
    
-
-
     &__info{
         width: 100%;
         height: 100%;
@@ -35,12 +35,14 @@
             justify-content: center;
             align-items: center;
             padding: 0 1rem;
+
             & img{
                 height: 90px;
                 width: 90px;
             }
 
         }
+
         &__title{
             width: max-content;
             max-width: 200%;
@@ -48,6 +50,7 @@
             display: flex;
             flex-direction: column;
             justify-content: center;
+
            & p{
             height: max-content;
            }
@@ -62,6 +65,7 @@
         align-items: flex-end;
         flex-direction: column;
         padding: 0 2rem;
+        
     }
 }
 

@@ -51,7 +51,6 @@
                 display: flex;
                 align-items: center;
                 padding-left: 2rem;
-
             }
         }
 
@@ -61,6 +60,15 @@
             display: grid;
             grid-template-columns: repeat(2,1fr);
             gap: 4rem;
+            cursor: default;
+            position: relative;
+
+            & h1 {
+                color: var(--text-color);
+                width:95%;
+                border-bottom: 4px solid var(--text-color);
+                
+            }
 
             &__albums{
                 width: 100%;
@@ -75,7 +83,6 @@
             }
 
             &__tracks{
-
                 width: 100%;
                 max-height: 100%;
                 overflow: auto;
@@ -90,34 +97,64 @@
         }
     }
 }
+@media screen and (min-width:3850px) {
+    .artistpage-wrapper{
 
+        &__inner{
+            zoom: 3;
+
+        }
+    }
+    
+}
 @media screen and (max-width:1024px) {
+
     .artistpage-wrapper{
         width: 90%;
+
         &__inner__artistassets{
             grid-template-columns: repeat(1,1fr)!important;
             gap: 1rem;
             overflow-x: hidden;
-           
         }
 
-       
     }
     
 }
 
 @media screen and (max-width: 542px) {
+
     .artistpage-wrapper{
         width: 90%;
         zoom: 0.5;
         font-size: larger;
+
         &__inner__artistassets{
             max-height: 100%;
             gap: 6vh;
-            
         }
+
         &__inner__artistcard{
             height: 20vh;
         }
     }
+}
+
+@media (max-height: 600px) and (max-width:1024px) {
+
+    .artistpage-wrapper{
+        width: 75%;
+        height: 85%;
+        zoom: 0.5;
+
+        &__inner__artistassets{
+            gap: 1rem;
+            overflow-x: hidden;
+            grid-template-columns: repeat(2,1fr)!important;
+            zoom: 1;
+            
+        }
+
+    }
+    
 }

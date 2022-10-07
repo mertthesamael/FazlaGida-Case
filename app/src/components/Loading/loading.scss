@@ -23,10 +23,11 @@
 
 @media screen and (max-width:1024px) {
     .loading-wrapper{
-        &__logo{
 
+        &__logo{
             transform: scale(0.7);
             transform-origin: center;
+            
         }
     }
 }

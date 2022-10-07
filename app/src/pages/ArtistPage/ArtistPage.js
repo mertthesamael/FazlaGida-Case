@@ -15,8 +15,8 @@ const ArtistPage = (props) => {
 
 const { mbId } = useParams()
 
-//Fetching Track and Album data
-const {isLoading:albumLoading, data:topAlbums, isError, error} = useArtistAlbums(mbId)
+//Fetching Track and Album data and setting loading states (also checking url for 404)
+const {isLoading:albumLoading, data:topAlbums } = useArtistAlbums(mbId)
 const {isLoading:trackLoading ,data:topTracks } = useArtistTracks(mbId)
 const { currentArtist } = useContext(ArtistContext)
 
@@ -26,8 +26,9 @@ if(albumLoading || trackLoading){
     return <Loading />
 
 }
-if(albumLoading || trackLoading && topAlbums || topTracks == undefined){
-   return(<NotFound></NotFound>)
+
+if(albumLoading || trackLoading && topAlbums || topTracks === undefined){
+   return(<NotFound />)
 }
 
     return(
@@ -44,10 +45,10 @@ if(albumLoading || trackLoading && topAlbums || topTracks == undefined){
 
                     <div className="artistpage-wrapper__inner__artistassets__albums">
 
-                        <h1 style={{borderBottom: '4px solid black', width:'95%'}}>Top Albums</h1>
+                        <h1>Top Albums</h1>
 
                         {topAlbums.map(album => 
-                        <a key={album.name} href={album.url} target={'_blank'}>
+                        <a key={album.name} className={'artist-card'}  rel="noreferrer" href={album.url} target={'_blank'}>
 
                             <MainCard
                             title={topAlbums[0].artist.name}
@@ -61,10 +62,10 @@ if(albumLoading || trackLoading && topAlbums || topTracks == undefined){
 
                     <div className="artistpage-wrapper__inner__artistassets__tracks">
 
-                        <h1 style={{borderBottom: '4px solid black',width:'95%'}}>Top Tracks</h1>
+                        <h1>Top Tracks</h1>
 
                         {topTracks.track.map(track => 
-                        <a key={track.name} href={track.url} target={'_blank'}>
+                        <a key={track.name} className={'artist-card'}  rel="noreferrer" href={track.url} target={'_blank'}>
 
                         <MainCard 
                         title={track.name} 

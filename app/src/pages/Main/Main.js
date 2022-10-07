@@ -1,29 +1,35 @@
-import { useContext, useState } from "react";
-import { Route, Switch } from "react-router-dom"
+import { NavLink, Route, Switch } from "react-router-dom"
 import DarkMode from "../../components/DarkMode/DarkMode";
-import { ArtistContext } from "../../store/context";
 import ArtistPage from "../ArtistPage/ArtistPage";
 import Home from "../Home/Home"
 import "./main.scss"
 
 const Main = (props) => {
 
-    const ctx = useContext(ArtistContext)
+
    
 
     return(
         <div data-testid='background' className={"pagewrapper"}>
+
             <div className="themechange">
+
                 <div className="themechange__btnwrapper">
 
                     <DarkMode />
 
                 </div>
+
             </div>
+            
+            {/* ROUTES */}
 
             <Switch>
-
+                
+                {/* I used the mbid for routing and fetching artist data, some artists dont have any id, i could fetch it with artist name but i prefer doing it with id for best practice */}
                 <Route path={'/:mbId'}>
+
+                    <NavLink to='/' className="goback" />
 
                     <ArtistPage />
 
@@ -31,7 +37,9 @@ const Main = (props) => {
 
                 <Route path={'/'}>
 
-                    <Home></Home>
+                    <h1 id='title'>Top Artists</h1>
+
+                    <Home />
                     
                 </Route>
 

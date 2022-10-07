@@ -6,8 +6,11 @@ const NotFound = () => {
 
     return(
         <div className="notfound">
+
             <h1>However, you are lost in the app. So you may want to go to <NavLink to='/'>main page</NavLink></h1>
-            <img src={require("../../assets/logo.png")}></img>
+
+            <img alt='logo' src={require("../../assets/logo.png")}></img>
+
             <h1>4 0 4</h1>
         </div>
     )

@@ -3,7 +3,7 @@ import MainCard from '../components/MainCard/MainCard';
 
 
 
-it('should render same text passed into props', () => {
+it('should render same data passed into props', () => {
   const testMsg='Test'
   const thirdTestMsg='3333'  
   const secondTestMsg='Test 2'

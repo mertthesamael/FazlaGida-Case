@@ -1,5 +1,5 @@
-import { Fragment, useContext, useState } from "react";
-import Artist from "../../components/MainCard/MainCard";
+import { Fragment, useContext } from "react";
+import MainCard from "../../components/MainCard/MainCard";
 import "./home.scss"
 import InfiniteScrolll from "react-infinite-scroller"
 import { NavLink } from "react-router-dom";
@@ -12,46 +12,46 @@ import { useTopArtists } from "../../hooks/useTopArtists";
 const Home = (props) => {
     
     const ctx = useContext(ArtistContext)
-   
-    // Calling custom react query hook for fetching data
-    const {data:queryData, isLoading, isError, error, fetchNextPage } = useTopArtists()
 
-    // I set a variable called nextData to prevent fetch previous page results in the infinite scroll
-    const nextData =queryData?.pages[queryData.pages.length-1]
+    //Fetching data from custom React Query hook (Top Artists) and checking loading state
 
+    const {data:queryData, isLoading, isError, error, fetchNextPage, } = useTopArtists()
 
-    // Checking if loading state is 
     if(isLoading){
         return <Loading />
     }
     if(isError){
         return <h2>{error.message}</h2>
     }
-    
 
+    
     return(
-        
         <div data-testid='border' className="artists-wrapper">
 
                 <div className="artists-section" >
 
                     <InfiniteScrolll useWindow={false} hasMore={true} loadMore={fetchNextPage}>
 
-                        {nextData?.data?.artists.artist.map((artist) => 
+                        {queryData?.pages.map((page,i) => 
 
+                            <Fragment key={i}>
+
+                            {page.data.artists.artist.map(artist => 
                             <NavLink key={artist.name} 
                             onClick={() => ctx.onCurrentArtist(artist)} 
                             className={'artist-card'} 
-                            to={artist?.mbid}> 
+                            to={artist.mbid}> 
 
-                            <Artist title='Artist' 
-                            img={artist.image[1]['#text']} 
-                            artist={artist.name} 
-                            playcount={artist.playcount} 
-                            listeners={artist.listeners}/>
+                                <MainCard isHome={true} title='Artist' 
+                                img={artist.image[1]['#text']} 
+                                artist={artist.name} 
+                                playcount={artist.playcount} 
+                                listeners={artist.listeners}/>
 
-                            </NavLink>
-                                        
+                            </NavLink>)}
+                       
+                      
+                        </Fragment>
                             )
                         }
                     
@@ -61,7 +61,6 @@ const Home = (props) => {
                 </div>
             
             </div>
-
 
     )
 
