@@ -25,9 +25,8 @@ const Main = (props) => {
             {/* ROUTES */}
 
             <Switch>
-                
-                {/* I used the mbid for routing and fetching artist data, some artists dont have any id, i could fetch it with artist name but i prefer doing it with id for best practice */}
-                <Route path={'/:mbId'}>
+              
+                <Route path={'/:artistName'}>
 
                     <NavLink to='/' className="goback" />
 

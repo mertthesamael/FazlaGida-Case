@@ -3,7 +3,7 @@ import axios from "axios";
 
 const fetchArtistAlbums = (artistId) => {
     
-    return axios(`https://ws.audioscrobbler.com/2.0/?method=artist.gettopalbums&mbid=${artistId}&api_key=${process.env.REACT_APP_API_KEY}&format=json`)
+    return axios(`https://ws.audioscrobbler.com/2.0/?method=artist.gettopalbums&artist=${artistId}&api_key=${process.env.REACT_APP_API_KEY}&format=json`)
 
 }
 

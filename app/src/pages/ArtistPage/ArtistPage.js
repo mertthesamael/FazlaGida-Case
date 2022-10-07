@@ -13,11 +13,11 @@ import "./artistpage.scss"
 const ArtistPage = (props) => {
 
 
-const { mbId } = useParams()
+const { artistName } = useParams()
 
 //Fetching Track and Album data and setting loading states (also checking url for 404)
-const {isLoading:albumLoading, data:topAlbums } = useArtistAlbums(mbId)
-const {isLoading:trackLoading ,data:topTracks } = useArtistTracks(mbId)
+const {isLoading:albumLoading, data:topAlbums } = useArtistAlbums(decodeURI(artistName))
+const {isLoading:trackLoading ,data:topTracks } = useArtistTracks(decodeURI(artistName))
 const { currentArtist } = useContext(ArtistContext)
 
 

@@ -84,7 +84,7 @@ if(isLoading){
                             <NavLink  ref={ref}key={artist.name} 
                             onClick={() => ctx.onCurrentArtist(artist)} 
                             className={'artist-card'} 
-                            to={artist.mbid}> 
+                            to={artist.name}> 
 
                                 <MainCard isHome={true} title='Artist' 
                                 img={artist.image[1]['#text']} 
