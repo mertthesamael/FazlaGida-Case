@@ -20,7 +20,7 @@ This is how it looks on desktop-artist page
 
 And this one is in Light themed Home page for also desktop
 
-![image](https://user-images.githubusercontent.com/79616834/194466918-55a8df77-3369-41be-bc21-86bd6f75c366.png) ![image](https://user-images.githubusercontent.com/79616834/194466954-581828ec-5da6-440d-b8d8-d91b6d5b6219.png)
+![image](https://user-images.githubusercontent.com/79616834/194466918-55a8df77-3369-41be-bc21-86bd6f75c366.png) ![image](https://user-images.githubusercontent.com/79616834/194467538-79651f14-e9b0-4c2f-90c9-2485e1ab3bef.png)
 
 And in the mobile screens, it shows up like this.
 
