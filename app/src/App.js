@@ -7,7 +7,6 @@ import { ReactQueryDevtools } from "react-query/devtools"
 
 const App = () => {
 
-
   const queryClient = new QueryClient()
   
   return (

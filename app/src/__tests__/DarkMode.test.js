@@ -8,6 +8,7 @@ import Main from '../pages/Main/Main';
 it("should change colors on click", () => {
 
     const Mock = () => {
+        
         const queryClient = new QueryClient()
 
         return(

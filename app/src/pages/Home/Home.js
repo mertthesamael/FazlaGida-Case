@@ -24,7 +24,6 @@ const Home = (props) => {
         return <h2>{error.message}</h2>
     }
 
-    
     return(
         <div data-testid='border' className="artists-wrapper">
 

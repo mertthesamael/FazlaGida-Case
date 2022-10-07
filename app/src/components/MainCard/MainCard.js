@@ -1,10 +1,11 @@
 import "./maincard.scss"
-
+import Tilt from "react-parallax-tilt"
 
 const MainCard = ({backgroundColor, color, img, title, artist, playcount, listeners, isHome }) => {
 
     return(
-        
+        <Tilt className="tilt" tiltMaxAngleY={5} tiltMaxAngleX={0}>
+
         <div data-testid='card' style={{background:backgroundColor, color:color}} className='artist'>
 
             {/* This div belongs to RGB animation */}
@@ -19,11 +20,11 @@ const MainCard = ({backgroundColor, color, img, title, artist, playcount, listen
 
                 </div>
 
-                <div style={isHome&&{justifyContent:'space-evenly'}} className="artist__info__title">
+                <div style={isHome&&{justifyContent:'flex-start',marginTop:'1.2rem'}} className="artist__info__title">
 
                     <p style={isHome?{fontWeight:'normal',borderBottom:'1px solid '}:{fontWeight:'bold'}}>{title}</p>
 
-                    <p style={isHome?{fontWeight:'bold'}:{fontWeight:'normal'}}>{artist}</p>
+                    <p style={isHome?{fontWeight:'bold',marginTop:'1rem'}:{fontWeight:'normal'}}>{artist}</p>
 
                 </div>
 
@@ -39,6 +40,7 @@ const MainCard = ({backgroundColor, color, img, title, artist, playcount, listen
 
 
         </div>
+        </Tilt>
     )
 
 }

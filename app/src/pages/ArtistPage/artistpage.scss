@@ -16,7 +16,8 @@
         flex-direction: column;
         grid-template-columns: repeat(1);
         
-
+        
+        
         &__artistcard{
             width: 100%;
             height: 30%;
@@ -24,7 +25,7 @@
             border-radius: 14px;
             border: 3px solid var(--border);
             color: var(--text-color);
-            margin-bottom: 2rem;
+            margin-bottom: 0!important;
             align-items: center;
             padding: 2rem 2rem;
             box-shadow: 0 0  10px 1px var(--border);
@@ -51,6 +52,7 @@
                 display: flex;
                 align-items: center;
                 padding-left: 2rem;
+                position: relative;
             }
         }
 
@@ -62,11 +64,13 @@
             gap: 4rem;
             cursor: default;
             position: relative;
+            
 
             & h1 {
                 color: var(--text-color);
-                width:95%;
+                width:80%;
                 border-bottom: 4px solid var(--text-color);
+                margin-left: 1rem;
                 
             }
 
@@ -78,8 +82,16 @@
                 flex-direction: column;
                 grid-template-columns: repeat(1);
                 gap: 1rem;
-                padding: 1rem;
                 overflow-x: hidden;
+                padding-top: 1rem;
+
+                & .topalbums{
+                    
+                    width: 100%;
+                    overflow: auto;
+                    padding: 1rem;
+                    
+                }
             }
 
             &__tracks{
@@ -90,8 +102,14 @@
                 flex-direction: column;
                 grid-template-columns: repeat(1);
                 gap: 1rem;
-                padding: 1rem;
-                overflow-x: hidden;
+                padding-top: 1rem;
+                & .toptracks{
+                    
+                    width: 100%;
+                    overflow: auto;
+                    padding: 1rem;
+                    
+                }
 
             }
         }
@@ -111,11 +129,20 @@
 
     .artistpage-wrapper{
         width: 90%;
-
+        zoom: 0.8;
         &__inner__artistassets{
             grid-template-columns: repeat(1,1fr)!important;
             gap: 1rem;
             overflow-x: hidden;
+           
+        }
+        &__inner__artistassets{
+            max-height: 100%;
+            gap: 6vh;
+        }
+
+        &__inner__artistcard{
+            height: 20vh;
         }
 
     }

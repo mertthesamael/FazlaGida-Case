@@ -29,6 +29,17 @@
 
         width: 80%!important;
         height: 75%;
+        zoom: 0.8;
+    }
+    
+}
+@media screen and (max-width: 542px) {
+
+    .artists-wrapper{
+    height: min(70vh, 50rem);
+
+        width: 80%!important;
+        height: 75%;
         zoom: 0.5;
     }
     

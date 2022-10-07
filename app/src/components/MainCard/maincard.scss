@@ -69,7 +69,10 @@
     }
 }
 
+.tilt{
+    transform-style: preserve-3d;
 
+}
 // RGB Animation
 .rgb::after {
     display: none;
