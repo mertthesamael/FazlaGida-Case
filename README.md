@@ -3,7 +3,7 @@
 This is the case study for FazlaGida
 
 Live : https://mertenercan-fazlagida.netlify.app/
-
+StoryBook: https://mertenercan-fazlagida-storybook.netlify.app/
 
 
  I used the LastFm API for the data, and React Query for fetching.
