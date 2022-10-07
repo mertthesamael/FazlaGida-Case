@@ -1,4 +1,4 @@
-# FazlaG-da-Case
+# FazlaGida-Case
 
 This is the case study for FazlaGida
 
