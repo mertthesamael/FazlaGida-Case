@@ -29,5 +29,6 @@ it('should render same text passed into props', () => {
     const propsArtist = screen.getByText(testMsg);
 
     expect(propsArtist).toBeInTheDocument();
+    
   
   });

@@ -9,13 +9,13 @@ const ArtistCard = (props) => {
 
             <div className="artistpage-wrapper__inner__artistcard__img">
 
-                    <img alt='cardimg' src={props.image}></img>
+                <img alt='cardimg' src={props.image}></img>
 
             </div>
 
             <div className="artistpage-wrapper__inner__artistcard__title">
                 
-                    <h1 data-testid='artist-name'>{props.currentArtist ? props.currentArtist:props.name}</h1>
+                <h1 data-testid='artist-name'>{props.currentArtist ? props.currentArtist:props.name}</h1>
 
             </div>
 

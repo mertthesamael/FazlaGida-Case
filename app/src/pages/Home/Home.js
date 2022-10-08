@@ -13,6 +13,8 @@ import axios from "axios";
 const Home = (props) => {
 
                         /* I'LL BE HONEST WITH YOU, FETCHING TOP ARTIST DATA CODES ARE NOT MINE I STOLE IT FROM @alperalin */ 
+
+                                        /* Check out his GitHub page : https://github.com/alperalin */
                                 
     const ctx = useContext(ArtistContext)
     
@@ -64,17 +66,15 @@ const Home = (props) => {
       }, [inView]);
 
  
-if(isLoading){
-    return(<Loading />)
-}
+      if(isLoading){
+          return(<Loading />)
+      }
 
     return(
 
         <div data-testid='border' className="artists-wrapper">
 
                 <div className="artists-section" >
-
-                    
 
                         {queryData?.pages.map((artist,i) => 
 
@@ -93,15 +93,11 @@ if(isLoading){
                                 listeners={artist.listeners}/>
 
                             </NavLink>
-                       
                       
                         </Fragment>
                             )
                         }
-                    
-
-          
-
+        
                 </div>
             
             </div>

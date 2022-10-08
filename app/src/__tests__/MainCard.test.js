@@ -21,5 +21,18 @@ it('should render same data passed into props', () => {
   expect(propsPlaycount).toBeInTheDocument();
   expect(propsImg).toHaveAttribute("src",fourthTestMsg);
 
+
+});
+
+it('should have different style when mounted in home page', () => {
+  
+render(<MainCard isHome={true}></MainCard>)
+
+  const data = screen.getByTestId('cardinfo');
+
+    expect(data).toHaveStyle("justifyContent:flex-start;")
+    expect(data).toHaveStyle("marginTop:1.2rem;")
+
+
 });
 

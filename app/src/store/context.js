@@ -2,7 +2,7 @@ import React, { useState } from "react";
 
 
 const ArtistContext = React.createContext({
-    dark:false
+    emptyValue:''
 })
 
 export const ArtistContextWrapper = (props) => {

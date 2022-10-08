@@ -20,7 +20,7 @@ const MainCard = ({backgroundColor, color, img, title, artist, playcount, listen
 
                 </div>
 
-                <div style={isHome&&{justifyContent:'flex-start',marginTop:'1.2rem'}} className="artist__info__title">
+                <div data-testid='cardinfo' style={isHome&&{justifyContent:'flex-start',marginTop:'1.2rem'}} className="artist__info__title">
 
                     <p style={isHome?{fontWeight:'normal',borderBottom:'1px solid '}:{fontWeight:'bold'}}>{title}</p>
 

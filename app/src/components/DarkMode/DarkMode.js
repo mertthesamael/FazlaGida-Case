@@ -42,6 +42,7 @@ const DarkMode = (props) => {
 
 /*THEME SWITCH FUNCTION */
 
+/*Alo the inline styles is for Storybook */
 
     return(
         <button style={{border:props.border,boxShadow:props.shadow,backgroundImage:props.img}} className={theme === "dark"? clickedClass : ""} id='darkMode' onClick={e => switchTheme(e)}>

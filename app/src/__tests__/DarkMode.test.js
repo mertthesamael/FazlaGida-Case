@@ -11,6 +11,7 @@ it("should change colors on click", () => {
         
         const queryClient = new QueryClient()
 
+        
         return(
             <BrowserRouter>
             <QueryClientProvider client={queryClient}>
